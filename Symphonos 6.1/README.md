@@ -155,23 +155,23 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Los posts no tienen nada 
 
-![Pasted image 20231206142414.png]()
+![Pasted image 20231206142414.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206142414.png?raw=true)
 
 Entramos a flyspray y parece ser una web de project management, vemos este comentario 
 
-![Pasted image 20231206142526.png]()
+![Pasted image 20231206142526.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206142526.png?raw=true)
 
 Nos podemos hacer login y registrarnos, además podemos comentar en ese lugar, después de probar file upload con php, sqli, comienzo a testear xss, que al parecer es una vulnerbailidad recurrente en flyspray
 
-![Pasted image 20231206142959.png]()
+![Pasted image 20231206142959.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206142959.png?raw=true)
 
 Parece también que la página nos da 4 cookies 
 
-![Pasted image 20231206143041.png]()
+![Pasted image 20231206143041.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206143041.png?raw=true)
 
 Logramos dar con un xss 
 
-![Pasted image 20231206144228.png]()
+![Pasted image 20231206144228.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206144228.png?raw=true)
 
 Investigando encontramos que para la versión de 1.04 hay una vuln de xsrf
 
@@ -220,7 +220,7 @@ document.getElementById("hacked_form").submit();
 
 Así que intentamos, hosteamos un server con el script de javascript
 
-![Pasted image 20231206150812.png]()
+![Pasted image 20231206150812.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206150812.png?raw=true)
 
 Con esto se crea el usuario hacker y contraseña 12345678 con privilegios administrativos
 
@@ -232,7 +232,7 @@ Al parecer ssh no sirve.
 
 Con esto encontramos 2 cosas, una api y lo que parecer ser el manejador de blogs
 
-![Pasted image 20231206151041.png]()
+![Pasted image 20231206151041.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206151041.png?raw=true)
 
 Leyendo la api parece que se sirve en el puerto 5000 en /ls204g
 
@@ -249,25 +249,25 @@ Parece que genera un token con jwt y tiene los siguientes endpoints
 	- PATCH /:id
 - Lo que primero podemos hacer es intentar logearnos, usaremos postman para más facilidad
 
-![Pasted image 20231206151554.png]()
+![Pasted image 20231206151554.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206151554.png?raw=true)
 
 Vemos que para el login pide
 
-![Pasted image 20231206151642.png]()
+![Pasted image 20231206151642.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206151642.png?raw=true)
 
 Hacemos login con las mismas contraseñas y nos regresa el token de sesión
 
-![Pasted image 20231206151817.png]()
+![Pasted image 20231206151817.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206151817.png?raw=true)
 
 Ahora con esto podemos calar hacer un PATCH
 
 Podemos ver los cambios que hay, en la api solamente parece modificarse el texto
 
-![Pasted image 20231206151936.png]()
+![Pasted image 20231206151936.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206151936.png?raw=true)
 
 Podemos modificar el texto mostrado en posts
-![Pasted image 20231206152019.png]()
-![Pasted image 20231206152045.png]()
+![Pasted image 20231206152019.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152019.png?raw=true)
+![Pasted image 20231206152045.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152045.png?raw=true)
 
 Vamos a leer en el codigo que podemos hacer con eso
 
@@ -287,39 +287,39 @@ Investigando vemos este código de php ara verificar el contenido
 
 Nadamas que al parecer nos quita los special chars, pero el preg_replace, puede ejecutar código al parecer.
 
-![Pasted image 20231206152347.png]()
+![Pasted image 20231206152347.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152347.png?raw=true)
 
 Podemos ver que efectivamente lo hace
 
-![Pasted image 20231206152411.png]()
+![Pasted image 20231206152411.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152411.png?raw=true)
 
 Usamos system('id');
 
-![Pasted image 20231206152446.png]()
+![Pasted image 20231206152446.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152446.png?raw=true)
 
 Generamos un revshell con base64
 
-![Pasted image 20231206152650.png]()
+![Pasted image 20231206152650.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152650.png?raw=true)
 
 Cambiamos de usuario y es la misma contraseña para achilles, generamos una llave ssh y la agregamos a authorized_keys
 
-![Pasted image 20231206152912.png]()
+![Pasted image 20231206152912.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152912.png?raw=true)
 
 Ahora entramos cómodamente por ssh
 
-![Pasted image 20231206152946.png]()
+![Pasted image 20231206152946.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206152946.png?raw=true)
 
 Viendo lo que hay al parecer podemos ejecutar scripts de go con sudo 
 
-![Pasted image 20231206153016.png]()
+![Pasted image 20231206153016.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206153016.png?raw=true)
 
 Así que es un ez root
 
-![Pasted image 20231206153103.png]()
+![Pasted image 20231206153103.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206153103.png?raw=true)
 
 Hacemos a bash un binario SUID
 
-![Pasted image 20231206153200.png]()
+![Pasted image 20231206153200.png](https://github.com/Hamibubu/Writeups/blob/main/Symphonos%206.1/Pasted%20image%2020231206153200.png?raw=true)
 
 GG!
 
