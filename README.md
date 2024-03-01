@@ -10,3 +10,4 @@ Here you can find all my writeups
 - [Shoppy](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/README.md) -> Easy
 - [Soccer](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/README.md) -> "Easy" xD for me "Medium"
 - [Stocker](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/README.md) -> Easy
+- [VulnHub Symphonos 6.1]() -> Medium
