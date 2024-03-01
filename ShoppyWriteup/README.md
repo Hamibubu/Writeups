@@ -6,7 +6,7 @@ Este fue mi primer writeup
 nmap -v -sS -oX vulnerabilidades.xml --stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl --script=vuln 10.10.11.180
 ~~~
 
-![imagen](https://github.com/Hamibubu/ShoppyWriteup/assets/108554878/ad5c508c-f85f-4d92-b859-11c3451bac18)
+![imagen](https://github.com/Hamibubu/Writeups/blob/main/ShoppyWriteup/Pasted%20image%2020221102102512.png?raw=true)
 
 Nmap nos dice que está el puerto 80, entonces entramos y hay un login
 Pero antes editamos los hosts para entrar
@@ -14,19 +14,18 @@ Pero antes editamos los hosts para entrar
 ~~~
 sudo nano /etc/hosts
 ~~~
-![imagen](https://github.com/Hamibubu/ShoppyWriteup/assets/108554878/e4f934a0-984a-4c91-8c00-611e6a36803d)
 
-Ahora si entramos y calamos un slq injection básico
+Ahora si entramos y calamos un sql injection básico
 
-![imagen](https://github.com/Hamibubu/ShoppyWriteup/assets/108554878/f42fa178-2421-4231-a7cd-5b3e4498be26)
+![imagen](https://github.com/Hamibubu/Writeups/blob/main/ShoppyWriteup/Pasted%20image%2020221101193140.png?raw=true)
 
 Usamos sqlinjection
 
 Pero no jala con la normal, investigamos y descubrimos
 
-Esta es mongo
+Esta es mongoDB
 
-![imagen](https://github.com/Hamibubu/ShoppyWriteup/assets/108554878/e51aa0d8-1f93-4366-b71a-e80a3e255367)
+![imagen](https://github.com/Hamibubu/Writeups/blob/main/ShoppyWriteup/Pasted%20image%2020221101193327.png?raw=true)
 
 Entramos y vemos admin
 
