@@ -6,7 +6,7 @@ Este fue mi primer writeup
 nmap -v -sS -oX vulnerabilidades.xml --stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl --script=vuln 10.10.11.180
 ~~~
 
-![imagen](https://github.com/Hamibubu/Writeups/blob/main/PreciousWriteup/Pasted%20image%2020230110175411.png)
+![imagen](https://github.com/Hamibubu/Writeups/blob/main/ShoppyWriteup/Pasted%20image%2020221102102512.png?raw=true)
 
 Nmap nos dice que está el puerto 80, entonces entramos y hay un login
 Pero antes editamos los hosts para entrar
@@ -25,7 +25,7 @@ Pero no jala con la normal, investigamos y descubrimos
 
 Esta es mongoDB
 
-![imagen](https://github.com/Hamibubu/Writeups/blob/main/PreciousWriteup/Pasted%20image%2020230110175411.png)
+![imagen](https://github.com/Hamibubu/Writeups/blob/main/ShoppyWriteup/Pasted%20image%2020221101193327.png?raw=true)
 
 Entramos y vemos admin
 
