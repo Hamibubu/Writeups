@@ -40,7 +40,7 @@ PORT     STATE SERVICE    VERSION
 
 Entramos al puerto 443 y vemos un panel de login.
 
-(![Pasted image 20240226163529.png](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240226163529.png))
+![Pasted image 20240226163529.png](https://github.com/Hamibubu/Writeups/blob/main/MonitoredWriteup/Pasted%20image%2020240226163529.png)
 
 Enumeramos con ffuf
 
@@ -250,3 +250,5 @@ bash-5.1#
 ~~~
 
 Volvemos a correr eso y con ello ganamos el root de una forma sencilla
+
+Créditos tambien a [Retr0](https://github.com/JoseVazquez101)
