@@ -129,8 +129,6 @@ Ponemos chmod +s /bin/bash
 
 Y hacemos bash -p
 
-![imagen](https://github.com/Hamibubu/Writeups/blob/main/PreciousWriteup/Pasted%20image%2020230110175411.png)
-
 Y obtenemos la flag
 
 
